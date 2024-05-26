@@ -178,6 +178,10 @@ public class Main {
 		}
 			
 		} catch(Exception e) {
+			System.out.println(e.getMessage());
+			if(e.getMessage() == null) {
+				System.out.println("You can only enter integer. Program terminated. Bye!");
+			}
 			System.out.println("Unexpected error occur. Program terminated. Bye Bye !");
 			
 		}

@@ -13,7 +13,8 @@ public class UtilityFunctions {
 		s.nextLine();
 		while (res < 1 || res >2) {
 			System.out.println("Please choose between number 1 and 2");
-			System.out.println("Choose your role: /n 1) Admin /n 2) User");
+			System.out.println("Choose your role: \n 1) Admin \n 2) User");
+			System.out.print("Your role: ");
 			res = s.nextInt();
 			s.nextLine();
 		}

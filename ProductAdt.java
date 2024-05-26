@@ -162,20 +162,29 @@ public class ProductAdt implements Product {
 	@Override
 	public void userBuyProduct() {
 	
-		UtilityFunctions.printTableForUserView(hashMap);
-		System.out.println("Choose the item you want to buy by entering its number !");
-		System.out.print("Enter the number you want to buy: ");
-		int num = s.nextInt();
-		s.nextLine();
-		String id = "00" + num ;
-		String[] value = hashMap.get(id);
-		
-		int currentStock = Integer.parseInt(value[4]);
-		int newStock = currentStock - 1;
-		
-		value[4] = Integer.toString(newStock);
-		
-		System.out.println("Buy out completed");
+		try {
+			UtilityFunctions.printTableForUserView(hashMap);
+			System.out.println("Choose the item you want to buy by entering its number !");
+			System.out.print("Enter the number you want to buy: ");
+			int num = s.nextInt();
+			s.nextLine();
+			String id = "00" + num ;
+			String[] value = hashMap.get(id);
+			
+			int currentStock = Integer.parseInt(value[4]);
+			int newStock = currentStock - 1;
+			
+			value[4] = Integer.toString(newStock);
+			
+			System.out.println("Buy out completed");
+		} catch(Exception e) {
+			if(e.getMessage().equals("Cannot load from object array because \"value\" is null")) {
+				System.out.println("You cannot choose the number that does not exist.");
+			} else {
+				System.out.println(e.getMessage());
+			}
+		}
+
 	}
 
 
